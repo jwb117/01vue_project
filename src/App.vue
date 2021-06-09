@@ -2,10 +2,14 @@
  <ul class="view">
    <li v-for="(item, i) in product" v-bind:key="i">{{product[i].title}}</li>
  </ul>
+
+<banner />
+
 </template>
 
 <script>
 import vdata from './data.js'
+import 명작 from './components/banner.vue'
 
 export default {
   name: 'App',
@@ -13,6 +17,9 @@ export default {
     return{
       product:vdata, 
     }
+  }, 
+  components:{
+    banner:명작
   }
  
 }
