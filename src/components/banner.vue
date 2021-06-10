@@ -1,18 +1,20 @@
 <template>
-  <div class="banner">banner</div>
+  <div class="banner">
+    {{text}}
+  </div>
 </template>
 
 <script>
 export default {
-    name:'banner', 
+    name:'banner',
     data(){
         return{
-
+            text:'hello'
         }
     }
 }
 </script>
 
 <style>
-    .banner{width: 100%; height: 200px; background: #ccc; display: flex; justify-content: center; align-items: center;}
+    .banner{height: 200px; width: 100%; background: skyblue; display: flex; justify-content: center; align-items: center;}
 </style>
