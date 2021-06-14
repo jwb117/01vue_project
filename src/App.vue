@@ -11,7 +11,12 @@
      <button v-on:click="proView=false">닫기</button>
   </div>
 </div> -->
+
+<!-- <div class="start" :class="{end:proView}"> -->
+  <transition name="show">
 <modal v-bind:product="product" :proView="proView" v-bind:proNum="proNum" @modalClose="proView=false"/>
+  </transition>
+<!-- </div> -->
 
 <!-- <div>
  <ul class="view">
@@ -39,16 +44,16 @@ export default {
     return{
       proNum:0,
       proView:false,
-      product:vdata, 
-      
+      product:vdata,
+
     }
-  }, 
+  },
   components:{
    banner:banner,
    modal:modal,
    product:product,
   }
- 
+
 }
 </script>
 
@@ -60,5 +65,17 @@ export default {
   .view li{margin-bottom: 20px;}
   .black-bg{position: fixed; width: 100%; background: rgba(0,0,0,0.5); top:0; height: 100%; display: flex; justify-content: center; align-items: center; }
   .white-bg{width: 80%; background: #fff; border-radius: 5px; padding: 20px; }
+   
+/*  .start{opacity:0; transiton:0.3s;}
+  .start.end{opacity:1;} */
+
+
+  .show-enter-from, .show-leave-to{opacity:0; transform: translateY(-1000px);}
+  .show-enter-active, .show-leave-active{transition: 1s;}
+  .show-enter-to, .show-leave-from{opacity: 1; transform: translateY(0);}
+
+  /* .show-leave-from{opacity: 1;}
+  .show-leave-active{transition: 0.3s;}
+  .show-leave-to{opacity: 0;} */
 
 </style>
