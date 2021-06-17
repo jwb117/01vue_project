@@ -4,7 +4,7 @@
     <div>{{product.title}}
         <span @click="$emit('modalOpen', product.id)">[자세히보기]</span>
     </div>
-    <div>{{product.price}}</div>
+    <div>{{product.price.toLocaleString()}}원</div>
 </div>
 
 
