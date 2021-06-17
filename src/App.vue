@@ -12,11 +12,11 @@
   </div>
 </div> -->
 
-<!-- <div class="start" :class="{end:proView}"> -->
-  <transition name="show">
+<div class="start" :class="{end:proView==true, out:proView==false}">
+  <!-- <transition name="show"> -->
 <modal v-bind:product="product" :proView="proView" v-bind:proNum="proNum" @modalClose="proView=false"/>
-  </transition>
-<!-- </div> -->
+  <!-- </transition> -->
+</div>
 
 <!-- <div>
  <ul class="view">
@@ -66,8 +66,9 @@ export default {
   .black-bg{position: fixed; width: 100%; background: rgba(0,0,0,0.5); top:0; height: 100%; display: flex; justify-content: center; align-items: center; }
   .white-bg{width: 80%; background: #fff; border-radius: 5px; padding: 20px; }
    
-/*  .start{opacity:0; transiton:0.3s;}
-  .start.end{opacity:1;} */
+ .start{opacity:0; transition:0.7s;}
+  .start.end{opacity:1; transition: 0.7s;}
+  .start.out{opacity:0;}
 
 
   .show-enter-from, .show-leave-to{opacity:0; transform: translateY(-1000px);}
