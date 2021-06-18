@@ -1,6 +1,6 @@
 <template>
-  <div class="black-bg" v-if="proView == true">
-  <div class="white-bg">
+  <div class="black-bg" v-if="proView == true" v-on:click="$emit('modalClose')">
+  <div class="white-bg" v-on:click.stop.prevent="modalClose">
     <img v-bind:src="product[proNum].image" alt="">
      <div>{{product[proNum].title}}</div>
      <div>{{product[proNum].price.toLocaleString()}}원</div>

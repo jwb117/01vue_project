@@ -67,9 +67,8 @@ export default {
   .white-bg{width: 80%; background: #fff; border-radius: 5px; padding: 20px; }
    
  .start{opacity:0; transition:0.7s;}
-  .start.end{opacity:1; transition: 0.7s;}
-  .start.out{opacity:0;}
-
+  .start.end{opacity:1; transition:0.7s;}
+  .start.out{opacity:0; }
 
   .show-enter-from, .show-leave-to{opacity:0; transform: translateY(-1000px);}
   .show-enter-active, .show-leave-active{transition: 1s;}
